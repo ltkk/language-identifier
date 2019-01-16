@@ -13,3 +13,7 @@ python app.py
 # Model
 
 Pretrain model for language identifier can be found at: https://fasttext.cc/docs/en/language-identification.html
+
+# Screenshots
+
+![](asserts/language_identifier.png)
