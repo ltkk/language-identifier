@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Language Identification Demo(176 difference languages)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        function clear_result() {
+            $('.result').text('')
+            $('textarea').text('')
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Language Identification Demo</h2>
+    <p>Detect language of your document - 176 difference languages</p>
+    <form method="post">
+        <div class="form-group">
+            <label for="txt">Enter document:</label>
+            <textarea class="form-control" rows="5" name="txt" id="txt">{{txt}}</textarea>
+            <input type="submit" value="Submit" class="btn btn-success btn-lg" style="margin-top: 20px;">
+            <input type="reset" value="Reset" class="btn btn-default btn-lg" style="margin-top: 20px;" onclick="clear_result()">
+        </div>
+    </form>
+    <div class="result">
+        <h4>Predict result:</h4>
+        {% if language %}
+            <p>Language: <em>{{ language }}</em></p>
+        {% endif %}
+        {% if language_code %}
+            <p>Language_code: <em>{{ language_code }}</em></p>
+        {% endif %}
+        {% if score %}
+            <p>Score: <em>{{ score }}</em></p>
+        {% endif %}
+        {% if error %}
+            <p style="color: red;font-weight: bold;">{{error}}</p>
+        {% endif %}
+    </div>
+</div>
+<div class="container" style="margin-top:20px;">
+    <p>List of supported languages:</p>
+    <pre>af als am an ar arz as ast av az azb ba bar bcl be bg bh bn bo bpy br bs bxr ca cbk ce ceb ckb co cs cv cy da de diq dsb dty dv el eml en eo es et eu fa fi fr frr fy ga gd gl gn gom gu gv he hi hif hr hsb ht hu hy ia id ie ilo io is it ja jbo jv ka kk km kn ko krc ku kv kw ky la lb lez li lmo lo lrc lt lv mai mg mhr min mk ml mn mr mrj ms mt mwl my myv mzn nah nap nds ne new nl nn no oc or os pa pam pfl pl pms pnb ps pt qu rm ro ru rue sa sah sc scn sco sd sh si sk sl so sq sr su sv sw ta te tg th tk tl tr tt tyv ug uk ur uz vec vep vi vls vo wa war wuu xal xmf yi yo yue zh</pre>
+    <p>Made with <span style="color: red;">❤</span> by <a href="https://nguyenvanhieu.vn">Nguyễn Văn Hiếu</a>.</p>
+    <p>Pretrain model: <a href="https://fasttext.cc/docs/en/language-identification.html">Fasttext language identification</a></p>
+</div>
+</body>
+</html>
