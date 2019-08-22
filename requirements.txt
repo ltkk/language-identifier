@@ -7,4 +7,4 @@ MarkupSafe==1.1.0
 numpy==1.16.0
 pybind11==2.2.4
 regex==2018.11.22
-Werkzeug==0.14.1
+Werkzeug==0.15.3
